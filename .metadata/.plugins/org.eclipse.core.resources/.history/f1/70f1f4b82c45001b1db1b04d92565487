@@ -1,0 +1,10 @@
+package com.cybersoft.hashtable.example;
+
+import java.util.Hashtable;
+import java.util.Map.Entry;
+
+public class MainApp {
+	public static void main(String[] args) {
+		
+	}
+}

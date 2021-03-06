@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.cybersoft.stack&apos; to &apos;SyntaxCode_Stack/src&apos;&#x0D;&#x0A;- Original project: &apos;KeyLogger_Stack&apos;&#x0D;&#x0A;- Destination element: &apos;SyntaxCode_Stack/src&apos;&#x0D;&#x0A;- Original element: &apos;KeyLogger_Stack/src/com.cybersoft.stack&apos;" description="Copy package" destination="=SyntaxCode_Stack/src" element1="/src&lt;com.cybersoft.stack" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1609658673818" version="1.0"/>
+</session>

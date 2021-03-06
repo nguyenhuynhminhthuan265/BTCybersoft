@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.cybersoft.avltree&apos; to &apos;DuAnTuDien_AVLTree/src&apos;&#x0D;&#x0A;- Original project: &apos;Crud_AVLTree&apos;&#x0D;&#x0A;- Destination element: &apos;DuAnTuDien_AVLTree/src&apos;&#x0D;&#x0A;- Original element: &apos;Crud_AVLTree/src/com.cybersoft.avltree&apos;" description="Copy package" destination="=DuAnTuDien_AVLTree/src" element1="/src&lt;com.cybersoft.avltree" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1614977537705" version="1.0"/>
+</session>

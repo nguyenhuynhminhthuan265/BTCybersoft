@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private void capNhatCauHoiMonHoc(CauHoi cauHoi1)&apos; from &apos;com.cybersoft.main.TruongHoc.generateCauHoi()&apos; to &apos;com.cybersoft.main.TruongHoc&apos;&#x0D;&#x0A;- Original project: &apos;ThiTracNghiem_DuAnCuoiKhoa&apos;&#x0D;&#x0A;- Method name: &apos;capNhatCauHoiMonHoc&apos;&#x0D;&#x0A;- Destination type: &apos;com.cybersoft.main.TruongHoc&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;&#x0D;&#x0A;- Replace occurrences of statements with method" comments="false" description="Extract method &apos;capNhatCauHoiMonHoc&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;com.cybersoft.main{TruongHoc.java" name="capNhatCauHoiMonHoc" replace="true" selection="3032 72" stamp="1613302965260" version="1.0" visibility="2"/>
+</session>

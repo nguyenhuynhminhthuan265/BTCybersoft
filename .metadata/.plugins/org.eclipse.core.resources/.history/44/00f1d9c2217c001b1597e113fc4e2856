@@ -1,0 +1,12 @@
+package com.graph.bfs;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Graph {
+
+	private int vertices;
+	LinkedList<Integer> object[] = new LinkedList<Integer>()
+	
+	
+}

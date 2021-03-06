@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.cybersoft.stack.excersies.Character&apos; to &apos;MyCharacter&apos;&#x0D;&#x0A;- Original project: &apos;Stack_Java&apos;&#x0D;&#x0A;- Original element: &apos;com.cybersoft.stack.excersies.Character&apos;&#x0D;&#x0A;- Renamed element: &apos;com.cybersoft.stack.excersies.MyCharacter&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Character&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.cybersoft.stack.excersies{Character.java[Character" matchStrategy="1" name="MyCharacter" qualified="false" references="true" similarDeclarations="false" stamp="1608863046321" textual="false" version="1.0"/>
+</session>

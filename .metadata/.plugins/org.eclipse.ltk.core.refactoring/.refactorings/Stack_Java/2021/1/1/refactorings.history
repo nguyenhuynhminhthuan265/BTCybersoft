@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;KeyLogger_Stack/src/com.cybersoft.stack&apos;&#x0D;&#x0A;- Original project: &apos;Stack_Java&apos;&#x0D;&#x0A;- Destination element: &apos;KeyLogger_Stack/src/com.cybersoft.stack&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     com.cybersoft.stack.excersies.Stack.java&#x0D;&#x0A;     com.cybersoft.stack.excersies.MyStack.java&#x0D;&#x0A;     com.cybersoft.stack.excersies.Node.java" description="Copy compilation units" destination="=KeyLogger_Stack/src&lt;com.cybersoft.stack" element1="/src&lt;com.cybersoft.stack.excersies{Stack.java" element2="/src&lt;com.cybersoft.stack.excersies{MyStack.java" element3="/src&lt;com.cybersoft.stack.excersies{Node.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1609591514805" units="3" version="1.0"/>
+</session>

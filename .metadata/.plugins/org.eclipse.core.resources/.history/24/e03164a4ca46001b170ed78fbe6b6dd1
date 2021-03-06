@@ -1,0 +1,117 @@
+package com.cybersoft.excersies.qlkho;
+
+public class KhoHang implements Queue<MatHang> {
+	private MatHang[] matHangs;
+	private int front, rear;
+	private int currentSize;
+	private int capacity;
+
+	public KhoHang() {
+
+	}
+
+	public KhoHang(int capacity) {
+		matHangs = new MatHang[capacity];
+		front = rear = 0;
+		this.capacity = capacity;
+		currentSize = 0;
+	}
+
+	public KhoHang(MatHang[] matHangs, int front, int rear, int currentSize, int capacity) {
+
+		this.matHangs = matHangs;
+		this.front = front;
+		this.rear = rear;
+		this.currentSize = currentSize;
+		this.capacity = capacity;
+	}
+
+	@Override
+	public void enqueue(MatHang matHang) {
+		if (isFull()) {
+			System.out.println("Kho hàng đầy");
+			return;
+		}
+
+		matHangs[rear] = matHang;
+		currentSize++;
+		rear = (rear + 1) % capacity;
+	}
+
+	@Override
+	public MatHang dequeue() {
+		if (isEmpty()) {
+			System.out.println("Không có hàng");
+			return null;
+		}
+
+		front = front % capacity;
+		currentSize--;
+		return matHangs[front++];
+	}
+
+	@Override
+	public MatHang peek() {
+		if (isEmpty()) {
+			System.out.println("Không có hàng");
+			return null;
+		}
+		return matHangs[front];
+	}
+
+	@Override
+	public int size() {
+		return currentSize;
+	}
+
+	@Override
+	public boolean isEmpty() {
+		return currentSize == 0;
+	}
+
+	@Override
+	public boolean isFull() {
+		return currentSize == capacity;
+	}
+
+	public MatHang[] getMatHangs() {
+		return matHangs;
+	}
+
+	public void setMatHangs(MatHang[] matHangs) {
+		this.matHangs = matHangs;
+	}
+
+	public int getFront() {
+		return front;
+	}
+
+	public void setFront(int front) {
+		this.front = front;
+	}
+
+	public int getRear() {
+		return rear;
+	}
+
+	public void setRear(int rear) {
+		this.rear = rear;
+	}
+
+	public int getCurrentSize() {
+		return currentSize;
+	}
+
+	public void setCurrentSize(int currentSize) {
+		this.currentSize = currentSize;
+	}
+
+	public int getCapacity() {
+		return capacity;
+	}
+
+	public void setCapacity(int capacity) {
+		this.capacity = capacity;
+	}
+
+}

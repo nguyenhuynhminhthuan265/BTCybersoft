@@ -1,0 +1,180 @@
+package com.cybersoft.avltree;
+
+public class TreeAVL {
+	AVLNode root;
+
+	public TreeAVL() {
+
+	}
+
+	public TreeAVL(AVLNode root) {
+		this.root = root;
+	}
+
+	public AVLNode find(int key) {
+		AVLNode current = root;
+		while (current != null) {
+			if (current.key == key) {
+				break;
+			}
+			current = current.key < key ? current.right : current.left;
+		}
+		return current;
+	}
+
+	public void insert(int key) {
+		root = insert(root, key);
+	}
+
+	public void delete(int key) {
+		root = delete(root, key);
+	}
+
+	public AVLNode getRoot() {
+		return root;
+	}
+
+	public int height() {
+		return root == null ? 0 : root.height;
+	}
+
+	private AVLNode insert(AVLNode node, int key) {
+		if (node == null) {
+			return new AVLNode(key);
+		} else if (node.key > key) {
+			node.left = insert(node.left, key);
+		} else if (node.key < key) {
+			node.right = insert(node.right, key);
+		} else {
+			throw new RuntimeException("duplicate Key!");
+		}
+		return rebalance(node, key);
+	}
+
+	private AVLNode delete(AVLNode node, int key) {
+		if (node == null) {
+			return node;
+		} else if (node.key > key) {
+			node.left = delete(node.left, key);
+		} else if (node.key < key) {
+			node.right = delete(node.right, key);
+		} else {
+			if (node.left == null || node.right == null) {
+				node = (node.left == null) ? node.right : node.left;
+			} else {
+				AVLNode mostLeftChild = mostLeftChild(node.right);
+				node.key = mostLeftChild.key;
+				node.right = delete(node.right, node.key);
+			}
+		}
+		if (node != null) {
+//			node = rebalance(node);
+		}
+		return node;
+	}
+
+	private AVLNode mostLeftChild(AVLNode node) {
+		AVLNode current = node;
+		/* loop down to find the leftmost leaf */
+		while (current.left != null) {
+			current = current.left;
+		}
+		return current;
+	}
+
+	public AVLNode rebalance(AVLNode node, int key) {
+		node.height = updateHeight(node);
+		int balance = getBalance(node);
+		// Left left case
+		if (balance > 1 && key < node.left.key) {
+			return rotateRight(node);
+		}
+
+		// Right right Case
+		if (balance < -1 && key > node.right.key) {
+			return rotateLeft(node);
+		}
+
+		// Left Right Case
+		if (balance > 1 && key > node.left.key) {
+			node.left = rotateLeft(node.left);
+			return rotateRight(node);
+		}
+
+		// Right Left Case
+		if (balance < -1 && key > node.left.key) {
+			node.left = rotateRight(node.right);
+			return rotateLeft(node);
+		}
+
+		return node;
+	}
+
+	private AVLNode rotateRight(AVLNode rotateNode) {
+//		 y 
+//		/ \ 
+//		x T3 
+//	   / \ 
+//	  T1 T2
+
+		AVLNode x = rotateNode.left;
+		AVLNode T2 = x.right;
+
+		// ROTATE
+		x.right = rotateNode;
+		rotateNode.left = T2;
+
+		// UPDATE HEIGHT
+		updateHeight(rotateNode);
+		updateHeight(x);
+		return x;
+	}
+
+	private AVLNode rotateLeft(AVLNode y) {
+
+//		 y 
+//		/ \ 
+//		T3 x 
+//		  / \ 
+//	      T2 T1
+
+		AVLNode x = y.right;
+		AVLNode T2 = x.left;
+
+		// ROTATE
+		x.left = y;
+		y.right = T2;
+
+		// UPDATE HEIGHT
+		updateHeight(y);
+		updateHeight(x);
+		return x;
+	}
+
+	private int updateHeight(AVLNode n) {
+
+		return 1 + Math.max(height(n.left), height(n.right));
+
+	}
+
+	private int height(AVLNode n) {
+		return n == null ? 0 : n.height;
+	}
+
+	public int getBalance(AVLNode n) {
+		return (n == null) ? 0 : height(n.left) - height(n.right);
+	}
+
+	public void TraverseRecursive(AVLNode t) {
+		if (t != null) {
+
+			System.out.format("Khoa: %d, can bang: %d\n", t.key, t.height);
+			TraverseRecursive(t.left);
+			TraverseRecursive(t.right);
+		}
+	}
+
+	public void Traverse() {
+		TraverseRecursive(root);
+	}
+}

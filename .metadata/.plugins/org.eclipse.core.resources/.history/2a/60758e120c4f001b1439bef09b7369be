@@ -1,0 +1,9 @@
+package com.cybersoft.queue;
+
+public class Task {
+	enum HighPriority{
+		HIGH, MEDIUM, LOW
+	}
+	private String nameTask;
+	private 
+}

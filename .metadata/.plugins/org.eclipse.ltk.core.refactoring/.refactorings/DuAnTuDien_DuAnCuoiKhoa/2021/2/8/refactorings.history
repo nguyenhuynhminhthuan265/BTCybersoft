@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;DuAnTuDien_DuAnCuoiKhoa&apos;&#x0D;&#x0A;- Original project: &apos;DuAnTuDien_DuAnCuoiKhoa&apos;&#x0D;&#x0A;- Original element: &apos;com.cybersoft.dictionary.HashTable.java&apos;" description="Delete element" element1="/src&lt;com.cybersoft.dictionary{HashTable.java" elements="1" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1613718398835" subPackages="false" version="1.0"/>
+</session>

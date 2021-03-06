@@ -1,0 +1,37 @@
+package com.graph.bfs;
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class Graph {
+
+	private int vertices;
+	LinkedList<Integer> object[]; // danh sach canh cua do thi
+	boolean visited[] = new boolean[vertices];
+
+	public Graph() {
+
+	}
+
+	public Graph(int vertices) {
+		this.vertices = vertices;
+		this.object = new LinkedList[vertices];
+		visited = new boolean[vertices];
+		for (int vertex = 0; vertex < vertices; vertex++) {
+			visited[vertex] = false;
+			object[vertex] = new LinkedList<Integer>();
+		}
+
+	}
+
+	void addEdge(int vertexSource, int vertexDes) {
+		this.object[vertexSource].add(vertexDes);
+	}
+
+	void BFS(int vertex) {
+		Queue<Integer> queueVertexNeighBors = new LinkedList<Integer>();
+		visited[vertex] = true;
+		
+	}
+
+}

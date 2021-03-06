@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;com.cybersoft.bst&apos; to &apos;ThongKeTu_BinarySearchTree/src&apos;&#x0D;&#x0A;- Original project: &apos;ThongKeKyTu_BinarySearchTree&apos;&#x0D;&#x0A;- Destination element: &apos;ThongKeTu_BinarySearchTree/src&apos;&#x0D;&#x0A;- Original element: &apos;ThongKeKyTu_BinarySearchTree/src/com.cybersoft.bst&apos;" description="Copy package" destination="=ThongKeTu_BinarySearchTree/src" element1="/src&lt;com.cybersoft.bst" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1610711028558" version="1.0"/>
+</session>

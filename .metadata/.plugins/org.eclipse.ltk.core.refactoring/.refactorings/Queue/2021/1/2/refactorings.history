@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;MatHang.java&apos; to &apos;ArrangeTask_Queue/src/com.cybersoft.queue&apos;&#x0D;&#x0A;- Original project: &apos;Queue&apos;&#x0D;&#x0A;- Destination element: &apos;ArrangeTask_Queue/src/com.cybersoft.queue&apos;&#x0D;&#x0A;- Original element: &apos;com.cybersoft.excersies.qlkho.MatHang.java&apos;" description="Copy compilation unit" destination="=ArrangeTask_Queue/src&lt;com.cybersoft.queue" element1="/src&lt;com.cybersoft.excersies.qlkho{MatHang.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1609751697356" units="1" version="1.0"/>
+</session>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;BinarySearchTree.java&apos; to &apos;ThiTracNghiem_DuAnCuoiKhoa/src/com.cybersoft.node&apos;&#x0D;&#x0A;- Original project: &apos;Crud_BinarySearchTree&apos;&#x0D;&#x0A;- Destination element: &apos;ThiTracNghiem_DuAnCuoiKhoa/src/com.cybersoft.node&apos;&#x0D;&#x0A;- Original element: &apos;com.cybersoft.bst.BinarySearchTree.java&apos;" description="Copy compilation unit" destination="=ThiTracNghiem_DuAnCuoiKhoa/src&lt;com.cybersoft.node" element1="/src&lt;com.cybersoft.bst{BinarySearchTree.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1611646104255" units="1" version="1.0"/>
+</session>

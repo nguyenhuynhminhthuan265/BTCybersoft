@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;HashTable.java&apos; to &apos;DuAnTuDien_DuAnCuoiKhoa/src/com.cybersoft.dictionary&apos;&#x0D;&#x0A;- Original project: &apos;HashTable&apos;&#x0D;&#x0A;- Destination element: &apos;DuAnTuDien_DuAnCuoiKhoa/src/com.cybersoft.dictionary&apos;&#x0D;&#x0A;- Original element: &apos;com.cybersoft.hashtable.chaining.HashTable.java&apos;" description="Copy compilation unit" destination="=DuAnTuDien_DuAnCuoiKhoa/src&lt;com.cybersoft.dictionary" element1="/src&lt;com.cybersoft.hashtable.chaining{HashTable.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1613716174502" units="1" version="1.0"/>
+</session>

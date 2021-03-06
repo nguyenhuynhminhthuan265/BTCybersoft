@@ -1,0 +1,11 @@
+NodeDouble<T> current = head;
+		if (head == null) {
+			System.out.println("Tu dien trong");
+			return;
+		}
+		System.out.println("Tu dien: ");
+		while (current != null) {
+
+			System.out.println(current.data);
+			current = current.next;
+		}
