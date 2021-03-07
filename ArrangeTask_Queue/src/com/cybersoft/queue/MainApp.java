@@ -10,6 +10,7 @@ public class MainApp {
 		Task task5 = new Task(5, "task 5", 4);
 		Task task6 = new Task(6, "task 6", 5);
 
+		
 		myPriorityQueue.enqueue(task1);
 		myPriorityQueue.enqueue(task2);
 		myPriorityQueue.enqueue(task3);

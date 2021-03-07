@@ -12,14 +12,22 @@ public class TreeAVL {
 	}
 
 	public AVLNode<Word> find(String key) {
-		AVLNode<Word> current = root;
-		while (current != null) {
-			if (current.key.getWord().trim().toLowerCase().contains(key.trim().toLowerCase())) {
-				break;
-			}
-			current = current.key.getWord().compareTo(key) == -1 ? current.right : current.left;
+		return this.searchRecursive(root, key);
+	}
+
+	public AVLNode<Word> searchRecursive(AVLNode<Word> root, String key) {
+		if (root.key.getWord().trim().toLowerCase().contains(key.trim().toLowerCase())) {
+			return root;
 		}
-		return current;
+		if (key.compareTo(root.key.getWord()) < 0) {
+			return searchRecursive(root.left, key);
+		}
+		if (key.compareTo(root.key.getWord()) > 0) {
+			return searchRecursive(root.right, key);
+		}
+
+		return null;
+
 	}
 
 	public void insert(Word key) {
@@ -229,9 +237,9 @@ public class TreeAVL {
 		if (node == null)
 			return (new AVLNode<Word>(key));
 
-		if (key.getWord().compareTo(node.key.getWord()) == -1)
+		if (key.getWord().compareTo(node.key.getWord()) < 0)
 			node.left = insert(node.left, key);
-		else if (key.getWord().compareTo(node.key.getWord()) == 1)
+		else if (key.getWord().compareTo(node.key.getWord()) > 0)
 			node.right = insert(node.right, key);
 		else // Duplicate keys not allowed
 			return node;
@@ -247,21 +255,21 @@ public class TreeAVL {
 
 		// If this node becomes unbalanced, then there
 		// are 4 cases Left Left Case
-		if (balance > 1 && key.getWord().compareTo(node.left.key.getWord()) == -1)
+		if (balance > 1 && key.getWord().compareTo(node.left.key.getWord()) < 0)
 			return rightRotate(node);
 
 		// Right Right Case
-		if (balance < -1 && key.getWord().compareTo(node.right.key.getWord()) == 1)
+		if (balance < -1 && key.getWord().compareTo(node.right.key.getWord()) > 0)
 			return leftRotate(node);
 
 		// Left Right Case
-		if (balance > 1 && key.getWord().compareTo(node.left.key.getWord()) == 1) {
+		if (balance > 1 && key.getWord().compareTo(node.left.key.getWord()) > 0) {
 			node.left = leftRotate(node.left);
 			return rightRotate(node);
 		}
 
 		// Right Left Case
-		if (balance < -1 && key.getWord().compareTo(node.right.key.getWord()) == -1) {
+		if (balance < -1 && key.getWord().compareTo(node.right.key.getWord()) < 0) {
 			node.right = rightRotate(node.right);
 			return leftRotate(node);
 		}
@@ -273,7 +281,7 @@ public class TreeAVL {
 	public void TraverseRecursive(AVLNode<Word> t) {
 		if (t != null) {
 
-			System.out.format("Khoa: %d, can bang: %d\n", t.key, t.height);
+			System.out.format("Khoa: %s, can bang: %d\n", t.key.getWord(), t.height);
 			TraverseRecursive(t.left);
 			TraverseRecursive(t.right);
 		}

@@ -46,7 +46,7 @@ public class BFSGraph2 {
 
 	public void init(int vertices) {
 		int maxLineGraph = (vertices * (vertices - 3) / 2) + vertices + vertices;
-
+		
 		this.vertices = vertices;
 		visited = new boolean[vertices];
 		adjacentVertex = new int[maxLineGraph][maxLineGraph];

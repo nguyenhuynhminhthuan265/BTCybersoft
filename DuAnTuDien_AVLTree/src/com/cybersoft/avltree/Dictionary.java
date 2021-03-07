@@ -69,6 +69,7 @@ public class Dictionary {
 				break;
 
 			case 4:
+				long startTime = System.nanoTime();
 				System.out.print("Nhap tu ban muon tra (Eng): ");
 				tempWord = sc.nextLine();
 				Word res = this.search(tempWord);
@@ -77,6 +78,10 @@ public class Dictionary {
 				} else {
 					System.out.println("Khong ton tai");
 				}
+
+				long endTime = System.nanoTime();
+				long totalTime = endTime - startTime;
+				System.out.print("totalTime: " + totalTime);
 				break;
 			case 5:
 
