@@ -15,7 +15,8 @@ public class MainApp {
 		dictionary.xuLyTuDien(sc);
 
 		dictionary.dictionary.Traverse();
-		//14051398001
-		//147488161001
+		System.out.println(dictionary.dictionary.count);
+		System.out.println(dictionary.count);
+		
 	}
 }

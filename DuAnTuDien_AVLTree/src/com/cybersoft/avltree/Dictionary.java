@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class Dictionary {
 	TreeAVL dictionary;
 	boolean flag = false;
+	int count = 0;
 
 	public Dictionary() throws IOException {
 		dictionary = new TreeAVL();
@@ -96,7 +97,7 @@ public class Dictionary {
 		boolean flag = true;
 		String line = "";
 		String nextLine = "";
-//		List<Word> words = new ArrayList<Word>();
+
 		Path path = FileSystems.getDefault().getPath("").toAbsolutePath();
 		BufferedReader bufferedReader = new BufferedReader(
 				new FileReader(path + "/src/com/cybersoft/avltree/data.EV.txt"));
@@ -116,6 +117,7 @@ public class Dictionary {
 			case "@":
 				word.setWord(line.replaceFirst("@", ""));
 				flag = false;
+				
 				break;
 			case "*":
 				word.setType(line.replaceFirst("\\*", ""));
@@ -140,7 +142,9 @@ public class Dictionary {
 			}
 
 			if (flag == true) {
+				++count;
 				dictionary.insert(word);
+				
 				word = new Word();
 			}
 

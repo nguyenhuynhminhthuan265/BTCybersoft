@@ -93,12 +93,16 @@ public class CustomDoubleLinkedList<T> {
 			System.out.println("Tu dien trong");
 			return;
 		}
+		int count = 0;
 		System.out.println("Tu dien: ");
 		while (current != null) {
 
 			System.out.println(current.data);
+			++count;
 			current = current.next;
 		}
+		
+		System.out.println(count);
 	}
 
 	public T search(T data) {

@@ -1,10 +1,14 @@
 package com.cybersoft.avltree;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AVLNode<T> {
 	T key;
 	int height;
 	AVLNode<T> left;
 	AVLNode<T> right;
+	List<T> existNode = new ArrayList<T>();
 
 	public AVLNode() {
 

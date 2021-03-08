@@ -2,6 +2,7 @@ package com.cybersoft.avltree;
 
 public class TreeAVL {
 	AVLNode<Word> root;
+	public int count = 0;
 
 	public TreeAVL() {
 
@@ -234,27 +235,27 @@ public class TreeAVL {
 	AVLNode<Word> insert(AVLNode<Word> node, Word key) {
 
 		/* 1. Perform the normal BST insertion */
-		if (node == null)
+		if (node == null) {
+			++count;
 			return (new AVLNode<Word>(key));
+		}
 
 		if (key.getWord().compareTo(node.key.getWord()) < 0)
 			node.left = insert(node.left, key);
 		else if (key.getWord().compareTo(node.key.getWord()) > 0)
 			node.right = insert(node.right, key);
-		else // Duplicate keys not allowed
+		else {
+			// Duplicate keys not allowed
+			node.existNode.add(key);
+			++count;
 			return node;
+		}
 
-		/* 2. Update height of this ancestor node */
 		node.height = 1 + max(height(node.left), height(node.right));
 
-		/*
-		 * 3. Get the balance factor of this ancestor node to check whether this node
-		 * became unbalanced
-		 */
 		int balance = getBalance(node);
 
-		// If this node becomes unbalanced, then there
-		// are 4 cases Left Left Case
+		// Left Left Case
 		if (balance > 1 && key.getWord().compareTo(node.left.key.getWord()) < 0)
 			return rightRotate(node);
 
@@ -274,7 +275,6 @@ public class TreeAVL {
 			return leftRotate(node);
 		}
 
-		/* return the (unchanged) node pointer */
 		return node;
 	}
 

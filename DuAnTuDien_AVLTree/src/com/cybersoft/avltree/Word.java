@@ -71,6 +71,12 @@ public class Word {
 
 	}
 
+	public int generateCode() {
+		String text = this.word + this.type;
+
+		return text.hashCode();
+	}
+
 	@Override
 	public String toString() {
 		return "Word [word=" + word + ", type=" + type + "\n" + "meanings=" + printMeanings(meanings) + "]\n";

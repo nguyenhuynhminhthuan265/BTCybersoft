@@ -14,6 +14,7 @@ import com.cybersoft.model.entity.SinhVien;
 
 import com.cybersoft.node.NodeMonHoc;
 import com.cybersoft.node.NodeSinhVien;
+import com.cybersoft.node.generic.CustomLinkedList;
 import com.cybersoft.node.generic.Node;
 
 public class MainApp {
@@ -45,41 +46,79 @@ public class MainApp {
 			toDoGiaoVien(truongHoc, sc);
 		} else {
 			SinhVien sinhVien = truongHoc.findByUsername(Integer.valueOf(userLoginDto.getUsername()));
-			System.out.println("Mon Thi: ");
-			// Nhập Môn học
-			int maMonHoc;
+			int option;
 			do {
-				System.out.print("Nhap MA MON HOC: ");
-				maMonHoc = Integer.parseInt(sc.nextLine());
-				if (truongHoc.findByMonHoc(maMonHoc) == null) {
-					System.out.println("Mon Hoc khong da ton tai !!! Nhap lai");
-				}
-			} while (truongHoc.findByMonHoc(maMonHoc) == null);
+				System.out.println("1: Thi trac nghiem");
+				System.out.println("2: In bang diem mon hoc cua sinh vien");
+				System.out.println("3: In chi tiet cau hoi da thi 1 mon hoc cua sinh vien");
+				System.out.println("4: Thoat");
+				System.out.print("option: ");
+				option = Integer.parseInt(sc.nextLine());
+				switch (option) {
+				case 1:
+					ThiTracNghiem(sc, truongHoc, sinhVien);
+					break;
+				case 2:
+					CustomLinkedList<DiemThi> dsDiemThi = sinhVien.getDsDiemThi();
+					dsDiemThi.show("Sinh vien chua thi mon nao");
+					break;
+				case 3:
+					ThiTracNghiem(sc, truongHoc, sinhVien);
+					break;
 
-			System.out.println("So cau hoi thi: ");
-			int soCauHoi = Integer.parseInt(sc.nextLine());
-			List<CauHoi> list = truongHoc.danhSachCauHoiTheoMonHoc(maMonHoc);
-			if (!list.isEmpty()) {
-				for (CauHoi cauHoi : list) {
-					System.out.println(cauHoi.toString());
+				default:
+					break;
 				}
-			}
-
-			System.out.println("Tra loi cau hoi bằng cách gõ liên tục đáp án, ví dụ: aabbccd hoặc AABBCCDD ");
-			String answer = sc.nextLine();
-			String[] arrayAnswer = answer.split("");
-			int soCauDung = 0;
-			for (int i = 0; i < list.size(); i++) {
-				if (list.get(i).getDapAn().getLuaChon().toLowerCase().equals(arrayAnswer[i].toLowerCase())) {
-					soCauDung++;
-				}
-			}
-			float diem = (float) soCauDung * 10 /list.size();
-			DiemThi diemThi = new DiemThi(maMonHoc, diem);
-			truongHoc.capNhatDiemSinhVien(sinhVien.getMaSV(), diemThi);
-			truongHoc.findByUsername(sinhVien.getMaSV()).getDsDiemThi().show("Sinh vien chua thi mon nao");
+			} while (option != 4);
 
 		}
+	}
+
+	private static void ThiTracNghiem(Scanner sc, TruongHoc truongHoc, SinhVien sinhVien) {
+		System.out.println("Mon Thi: ");
+		// Nhập Môn học
+		int maMonHoc;
+		do {
+			System.out.print("Nhap MA MON HOC: ");
+			maMonHoc = Integer.parseInt(sc.nextLine());
+			if (truongHoc.findByMonHoc(maMonHoc) == null) {
+				System.out.println("Mon Hoc khong da ton tai !!! Nhap lai");
+			}
+		} while (truongHoc.findByMonHoc(maMonHoc) == null);
+
+		System.out.println("So cau hoi thi: ");
+		int soCauHoi = Integer.parseInt(sc.nextLine());
+		List<CauHoi> list = truongHoc.danhSachCauHoiTheoMonHoc(maMonHoc);
+
+		List<CauHoi> cauHoiThi = new ArrayList<CauHoi>();
+
+		if (!list.isEmpty()) {
+
+			for (int i = 0; i < soCauHoi; i++) {
+				int index = (int) (Math.random() * ((list.size() - 0))) + 0;
+				cauHoiThi.add(list.get(index));
+			}
+
+		}
+
+		for (CauHoi cauHoi : cauHoiThi) {
+			System.out.println(cauHoi.toString());
+		}
+
+		System.out.println("Tra loi cau hoi bằng cách gõ liên tục đáp án, ví dụ: aabbccd hoặc AABBCCDD ");
+		String answer = sc.nextLine();
+		String[] arrayAnswer = answer.split("");
+		int soCauDung = 0;
+		for (int i = 0; i < cauHoiThi.size(); i++) {
+			if (cauHoiThi.get(i).getDapAn().getLuaChon().toLowerCase().equals(arrayAnswer[i].toLowerCase())) {
+				soCauDung++;
+			}
+		}
+		System.out.println("So cau dung: " + soCauDung);
+		float diem = (float) soCauDung * 10 / cauHoiThi.size();
+		DiemThi diemThi = new DiemThi(maMonHoc, diem);
+		truongHoc.capNhatDiemSinhVien(sinhVien.getMaSV(), diemThi);
+		truongHoc.findByUsername(sinhVien.getMaSV()).getDsDiemThi().show("Sinh vien chua thi mon nao");
 	}
 
 	private static UserLoginDto filterAuth(TruongHoc truongHoc) {
